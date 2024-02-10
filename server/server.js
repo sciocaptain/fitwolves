@@ -1,24 +1,17 @@
-// Run this script to launch the server.
-// The server should run on localhost port 8000.
-// This is where you should start writing server-side code for this application.
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+var mongoose = require("mongoose")
+var express = require("express")
+var cors = require('cors')
+const dotenv = require('dotenv').config()
+var bcrypt = require('bcrypt')
+var ExpressSession = require("express-session")
+var SessionStore = require('connect-mongodb-session')(ExpressSession);
+var keySecret = process.argv[2];
+const connectDB = require('./config/db')
 
-// Connect to MongoDB
-const mongoDB = 'mongodb://127.0.0.1:27017/fake_so';
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+connectDB()
 
-// Define cors option to allow connection to localhost:3000
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
-const app = express();
-app.use(cors(corsOptions));
-app.use(express.json());
-
+var server = express()
+var MongoDB = "mongodb+srv://ormstats1:ORMdb2024@orm.cmeeoo3.mongodb.net/?retryWrites=true&w=majority"
 
 /* THIS IS WHERE WE SHOULD START CODING */
 
