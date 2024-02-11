@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Survey = () => {
     const [gender, setGender] = useState('');
     return (
-        <div id="survey-container">
+        <div id="survey-container" style = {{overflow: "hidden"}}>
             <div id="survey-window-1" style = {{visibility: "hidden"}}>
                 <div class="text-container-1">
                     Hey there, Seawolf.
@@ -15,20 +15,21 @@ const Survey = () => {
                 <div class="text-container-3">
                     What's your date of birth?
                 </div>
-                <input className = "user_DOB" type="text" placeholder="I was born on" style={{ top: '55%' }}  />
+                <input className = "user_DOB" type="text" placeholder="MM-DD-YYYY" style={{ top: '55%' }}  />
             </div>
-            <div id="survey-window-2" style = {{visibility: "hidden"}}>
-                <div class="tc1">
-                    Good to meet you, Suyash
+            <div id="survey-window-2" style = {{visibility: "hidden", overflow: "hidden"}}>
+                <div class="tc1" style = {{textAlign: "left", left : "10%"}}>
+                    Nice to meet you
                 </div>
                 <div className="gender-container">
-                    <div className="text-container-gender">
+                    <div className="text-container-gender" >
                         What is your gender?
                     </div>
                     <div className="radio-container">
                     <label>
                      <input
                           type="radio"
+                          class = "radButton"
                           name="gender"
                           value="Male"
                           checked={gender === 'Male'}
@@ -37,6 +38,7 @@ const Survey = () => {
                     <label>
                         <input
                           type="radio"
+                          class = "radButton"
                           name="gender"
                           value="Female"
                           checked={gender === 'Female'}
@@ -45,6 +47,7 @@ const Survey = () => {
                     <label>
                         <input
                         type="radio"
+                        class = "radButton"
                         name="gender"
                         value="Other"
                         checked={gender === 'Other'}
@@ -52,8 +55,6 @@ const Survey = () => {
                         />Other</label>
                     </div>
                 </div>
-
-            
             </div>
             <div id="survey-window-3" style = {{visibility: "hidden"}}>
                 <div class="hw-container-1">
@@ -62,13 +63,13 @@ const Survey = () => {
                 <div class="hw-container-2">
                    How tall are you?
                 </div>
-                <input className = "user_height" type="text" placeholder="    ft    in" style={{ top: '55%' }}/>
+                <input className = "user_height" type="text" placeholder="    ft    in" style={{ top: '55%', left: "22%"}}/>
                 <div class="hw-container-3">
                     What's your weight?
                 </div>
                 <input className = "user_weight" type="text" placeholder="            lb" style={{ top: '55%' }}  />
             </div>
-            <div id = "survey-window-5">
+            <div id = "survey-window-5" style = {{visibility: "visible"}}>
                 <div id = "title-win-4">Everyone's Beautiful.</div>
                 <div id = "container1-5">
                     <img id = "skinny-5"></img>
@@ -84,11 +85,15 @@ const Survey = () => {
                 </div>
                 
             </div>
-            <div id = "survey-window-6">
-
+            <div id = "survey-window-6" style = {{visibility: "hidden"}}>
+                <div id = "title-win-4">When are you free?</div>
+                <img id = "background-schedule"></img>
+                <div id = "schedule-picker">
+                    
+                </div>
             </div>
             <div id = "survey-window-7">
-                
+            
             </div>
         </div>
     );

@@ -1,0 +1,518 @@
+[{
+  "date": "Sunday",
+  "breakfast": [
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 0,
+      "protein": 8,
+      "fat": 12,
+      "calories": 200
+    },
+    {
+      "name": "Crispy Hashbrowns",
+      "carbs": 20,
+      "protein": 2,
+      "fat": 10,
+      "calories": 150
+    },
+    {
+      "name": "Pepperoni, Parmesan, Provolone & Mozzarella Cheese, Mushroom Egg Frittata",
+      "carbs": 5,
+      "protein": 15,
+      "fat": 10,
+      "calories": 250
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Jamaican Beef Pepper Steak",
+      "carbs": 10,
+      "protein": 25,
+      "fat": 15,
+      "calories": 350
+    },
+    {
+      "name": "Baked Sweet Potato",
+      "carbs": 40,
+      "protein": 2,
+      "fat": 0,
+      "calories": 150
+    },
+    {
+      "name": "Grilled Vegetables",
+      "carbs": 15,
+      "protein": 2,
+      "fat": 5,
+      "calories": 100
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Chicken Quesadilla",
+      "carbs": 40,
+      "protein": 25,
+      "fat": 12,
+      "calories": 400
+    },
+    {
+      "name": "Grilled Vegetables",
+      "carbs": 15,
+      "protein": 2,
+      "fat": 5,
+      "calories": 100
+    },
+    {
+      "name": "Tofu Tikka Masala",
+      "carbs": 20,
+      "protein": 10,
+      "fat": 8,
+      "calories": 300
+    }
+  ]
+},
+{
+  "date": "Monday",
+  "breakfast": [
+    {
+      "name": "Blueberry Pancakes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Breakfast",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "Blueberry Compote",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Breakfast",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Breakfast",
+      "vegetarian": "Unknown"
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Cajun Shrimp, Pork Sausage, Country Cheese Grits",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "Black Eyed Peas, Rice, Pork Broth",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "Collard Greens",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "piri piri chicken thigh",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "piri-naise dipping sauce",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    },
+    {
+      "name": "escalivada",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10,
+      "type": "Lunch/Dinner",
+      "vegetarian": "Unknown"
+    }
+  ]
+},
+{
+  "date": "Tuesday",
+  "breakfast": [
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 0,
+      "protein": 8,
+      "fat": 12,
+      "calories": 200
+    },
+    {
+      "name": "Crispy Hashbrowns",
+      "carbs": 20,
+      "protein": 2,
+      "fat": 10,
+      "calories": 150
+    },
+    {
+      "name": "Pepperoni, Parmesan, Provolone & Mozzarella Cheese, Mushroom Egg Frittata",
+      "carbs": 5,
+      "protein": 15,
+      "fat": 10,
+      "calories": 250
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Jamaican Beef Pepper Steak",
+      "carbs": 10,
+      "protein": 25,
+      "fat": 15,
+      "calories": 350
+    },
+    {
+      "name": "Baked Sweet Potato",
+      "carbs": 40,
+      "protein": 2,
+      "fat": 0,
+      "calories": 150
+    },
+    {
+      "name": "Grilled Vegetables",
+      "carbs": 15,
+      "protein": 2,
+      "fat": 5,
+      "calories": 100
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Chicken Quesadilla",
+      "carbs": 40,
+      "protein": 25,
+      "fat": 12,
+      "calories": 400
+    },
+    {
+      "name": "Grilled Vegetables",
+      "carbs": 15,
+      "protein": 2,
+      "fat": 5,
+      "calories": 100
+    },
+    {
+      "name": "Tofu Tikka Masala",
+      "carbs": 20,
+      "protein": 10,
+      "fat": 8,
+      "calories": 300
+    }
+  ]
+},{
+  "date": "Wednesday",
+  "breakfast": [
+    {
+      "name": "Blueberry, French Toast Casserole",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Blueberry Compote",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Buffalo Chicken",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Herb Roasted Fingerling Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Sauteed Vegetable Medley",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Tofu Marsala",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Fresh Asparagus",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Olive Oil Mashed Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ]
+},{
+  "date": "Thursday",
+  "breakfast": [
+    {
+      "name": "Blueberry, French Toast Casserole",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Blueberry Compote",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Buffalo Chicken",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Herb Roasted Fingerling Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Sauteed Vegetable Medley",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Tofu Marsala",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Fresh Asparagus",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Olive Oil Mashed Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ]
+},{
+  "date": "Friday",
+  "breakfast": [
+    {
+      "name": "Blueberry, French Toast Casserole",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Blueberry Compote",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Buffalo Chicken",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Herb Roasted Fingerling Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Sauteed Vegetable Medley",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Tofu Marsala",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Fresh Asparagus",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Olive Oil Mashed Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ]
+},{
+  "date": "Saturday",
+  "breakfast": [
+    {
+      "name": "Blueberry, French Toast Casserole",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Blueberry Compote",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Scrambled Eggs with Cream and Butter",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Buffalo Chicken",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Herb Roasted Fingerling Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Sauteed Vegetable Medley",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Tofu Marsala",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Fresh Asparagus",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    },
+    {
+      "name": "Olive Oil Mashed Potatoes",
+      "carbs": 10,
+      "protein": 10,
+      "fat": 10,
+      "calories": 10
+    }
+  ]
+}]

@@ -399,7 +399,7 @@ body{
   position: absolute;
   top: 10%;
   left: 10%;
-  font-size: 4vw;
+  font-size: 3vw;
   font-weight: 500 ;
 }
 
@@ -614,6 +614,7 @@ body{
   text-align: left;
   font-family: 'Heebo';
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.6)
 }
 .radio-container {
   display: flex;
@@ -628,7 +629,13 @@ body{
   font-size: 1.6vw; 
   color: white; 
   font-weight: 100;
+
 } 
+
+ .radButton{
+    color: green;
+ }
+
  .radio label{
   background-color: transparent; 
   border-radius: 50%; 
@@ -640,19 +647,21 @@ body{
   top:12%;
   left:8%;
   width:60%;
-  height: 78%;
+  height: 20%;
   font-size: 4vw;
   font-weight: 600;
 }
 .hw-container-2{
   position: absolute;
   top:45%;
-  left:8.8%;
+  left:12%;
   width:40%;
-  height: 78%;
+  height: 10%;
   font-size: 2vw;
   font-weight: 500;
+  text-align: left;
 }
+
 .hw-container-3{
   position: absolute;
   top:45%;
@@ -706,4 +715,115 @@ body{
 #survey-container{
   background-image: url("../images/background-survey.svg");
   background-size: cover; 
+}
+
+#background-schedule{
+  position: absolute;
+  content: url("../images/scheduleInput.svg");
+  transform: translate(-50%,-50%);
+  width: 80%;
+  top: 55%;
+}
+
+#schedule-picker{
+  position: absolute;
+  background-color: red;
+  transform: translate(-50%,-50%);
+  width: 75%;
+  left: 52%;
+  height: 50%;
+  top: 55%;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-40%, 40%);
+            transform: translate(-40%, 40%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.breakfastOption{
+  position: absolute;
+  font-size: 1vw;
+  top: 10vw;
+  background-color: #376b25;
+  border-radius: 1vw;
+  width: calc(100%/7 - 0.2vw);
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 40000;
+}
+
+.lunchOption{
+  position: absolute;
+  font-size: 1vw;
+  top: 60vh;
+  background-color: #376b25;
+  border-radius: 1vw;
+  width: calc(100%/7 - 0.2vw);
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 40000;
+}
+
+.dinnerOption{
+  position: absolute;
+  font-size: 1vw;
+  top: 60vw;
+  background-color: #376b25;
+  border-radius: 1vw;
+  width: calc(100%/7 - 0.2vw);
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 40000;
+}
+
+#timesheet-boundary{
+  position: absolute;
+  width: 90%;
+  left: 8%;
+  height: 100%;
+}
+
+#Show-info{
+  position: absolute;
+  top: 40%;
+  width: 80%;
+  height: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#titleShow{
+  font-weight: 600;
+  font-size: 1vw;
+  text-align: center;
+}
+
+#infoFood{
+  width: 80%;
+  margin-left: 10%;
+  text-align: left;
 }
