@@ -38,23 +38,25 @@ async function saveFoodItem() {
 saveFoodItem();
 
 // Constructing the prompt
-const input = 'What are the colors in the rainbows';
+// const input = 'What are the colors in the rainbows';
 
-async function chatGPTReponse(){
-    const response = await openai.chat.completions.create({
+// async function chatGPTReponse(){
+//     const response = await openai.chat.completions.create({
 
-        model: 'gpt-3.5-turbo',
+//         model: 'gpt-3.5-turbo',
     
-        messages: [{"role":"user", "content":input}],
+//         messages: [{"role":"user", "content":input}],
     
-      })
+//       })
     
-      console.log(response.choices[0].message.content)
-}
-const hello = Food.find({ name: 'Punit'})
+//       console.log(response.choices[0].message.content)
+// }
+
+// chatGPTReponse();
+
+
+const hello = Food.find({name: 'Punit'})
 console.log(hello);
-
-chatGPTReponse();
 
 /*CODE ABOVE*/
 
