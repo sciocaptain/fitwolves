@@ -36,3 +36,190 @@
     transform: rotate(360deg);
   }
 }
+
+/* MOINAK EDIT BELOW */
+
+body{
+  background-color: #09080A;
+  overflow: hidden;
+  font-family: Heebo;
+  user-select: none
+}
+
+/* LOGIN PAGE */
+@keyframes fade-up-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%,-40%);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%,-50%);
+  }
+}
+
+@keyframes nutri-slide {
+  0% {
+    transform: translate(-50%,-50%);
+    left:50%;
+    background-color: #09080A;
+  }
+  20% {
+    transform: translate(-50%,-50%);
+    left:50%;
+    background-color: #09080A;
+  }
+  40% {
+    transform: translate(0%,-50%);
+    left:0%;
+    background-color: #09080A;
+  }
+  50%{
+    background-color: transparent;
+  }
+}
+
+@keyframes wolf-slide {
+  0% {
+    transform: translate(-50%,-50%);
+    left:50%;
+    width:47.439713489%;
+    
+  }
+  20% {
+    transform: translate(-50%,-50%);
+    left:50%;
+    width:47.439713489%;
+  }
+  40% {
+    transform: translate(-100%,-50%);
+    left:100%;
+    width:47.439713489%;
+  }
+  
+}
+
+#login-background{
+  content: url("../images/long_island_graphic.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vw;
+}
+
+#login-window{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 75%;
+  width: 50%;
+  height: 100%;
+  animation: fade-up-in 5s ease forwards;
+}
+
+#image-container{
+  position: absolute;
+  width: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 30%;
+  aspect-ratio: calc(628.25/123.08);
+}
+
+#nutri-logo{
+  content: url("../images/Nutri-logo-1.png");
+  position: absolute;
+  width: calc(330.21/628.25);
+  height: 100%;
+  transform: translate(0%,-50%);
+  left: 0%;
+  top: 50%;
+  aspect-ratio: calc(330.21/123.08);
+  background-color: transparent;
+  animation: nutri-slide 5s ease forwards;
+  z-index: 100;
+}
+
+#wolf-logo{
+  content: url("../images/Wolf-logo-2.png");
+  position: absolute;
+  width: calc(298.04/628.25);
+  height: 100%;
+  aspect-ratio: calc(298.04/123.08);
+  transform: translate(-100%,-50%);
+  left: 100%;
+  top: 50%;
+  animation: wolf-slide 5s ease forwards;
+}
+
+.login-user-input{
+  background-color: transparent;
+  border: none;
+  border-bottom: rgba(255,255,255,0.5) 0.05vw solid;
+  font-size: 1vw;
+  color: rgba(255,255,255,0.8);
+  z-index: 1000;
+  
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  width: 40%;
+  transition: border-bottom 0.3s ease-in-out, font-size 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.login-user-input:focus{
+  outline: none;
+  border-bottom: rgba(255,255,255,1) 0.05vw solid;
+  font-size: 1.05vw;
+  width: 41%;
+}
+
+#login-submit{
+
+  background-color: #4F9737;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  top: 60%;
+  border-radius: 0.5vw;
+  height: 1.7vw;
+  font-size: 0.8vw;
+  color: rgba(255,255,255,0.8);
+  transition: height 0.3s ease-in-out, font-size 0.3s ease-in-out, width 0.3s ease-in-out;
+  z-index: 100;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+#login-submit:focus{
+  outline: none;
+  font-size: 0.9vw;
+  width: 42%;
+  height: 1.9vw;
+}
+
+#login-submit:hover{
+  outline: none;
+  font-size: 0.9vw;
+  width: 42%;
+  height: 1.9vw;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-container {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+  z-index: 1000;
+}
