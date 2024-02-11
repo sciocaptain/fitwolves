@@ -9,8 +9,8 @@ from zeast.eastscraper import scrape_menu_files
 load_dotenv() 
 mongo_uri = "mongodb+srv://sbuhacks1:6pIAHWNPppuLCLO4@sbuh.gogbc1t.mongodb.net/"
 
-db_name = "sbuh"
-db_collection_name = "foodie"
+db_name = "test"
+db_collection_name = "foods"
 
 # Connect to the MongoDB Atlas cluster
 client = MongoClient(mongo_uri)
