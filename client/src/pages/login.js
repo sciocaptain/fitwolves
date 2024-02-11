@@ -29,7 +29,7 @@ const Login = () => {
                 </div>
                 <input className = "login-user-input" type="text" placeholder="Username" style={{ top: '44%' }}/>
                 <input className = "login-user-input" type="password" placeholder="Password" style={{ top: '51%' }}  />
-                <Link to = "/survey" id = "login-submit" >Submit</Link> 
+                <Link to = "/window1" id = "login-submit" >Submit</Link> 
                 <svg
                 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',overflow: 'visible' }}
                 width="20vw"
