@@ -48,7 +48,7 @@ const Window3 = () => {
 
                 <button onClick={handleSubmit} id="clickey">Submit Survey</button>
             </div>
-            <Link to="/window2" className="btn-link">Go to Window 2</Link>
+            <Link to="/window4" className="btn-link">Go to Window 4</Link>
         </div>
     );
 };
