@@ -19,27 +19,7 @@ const openai = new OpenAI({
 
 /*CODE BELOW*/
 
-// async function saveFoodItem() {
-//     const foodItem = new Food({
-//         name: 'Spaghetti with Meatballs',
-//         date: new Date('2024-02-09'), // Assuming today's date
-//         type: 'dinner',
-//         carbs: 50,
-//         protein: 20,
-//         fat: 15,
-//         calories: 500,
-//         vegetarian: false
-//     });
-
-//     // Save the food item to the database
-//     await foodItem.save();
-// }
-
-// Call the asynchronous function
-// saveFoodItem();
-
-// Constructing the prompt
-
+const days_of_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 const textPrompt = `so the idea is to create a diet plan for the week - breakfast, lunch and dinner - using the data i provide, my data will include all the food types, which comes UNDER breakfast, lunch or dinner menu, and how many calories each food is, and i will tell you how many calories the person should have in a day, based on that - you will provide what this person will eat for breakfast, lunch and dinner for the week. 
 
@@ -55,9 +35,12 @@ FOOD ITEMSHUD BE (name, day, carbs, protein, fat, calories) - FOR ATTRIBUTES USE
 
 
 
-json file format {date(within this date - breakfast (fooditems(food name(attributes), food name(attributes))), lunch, dinner)} do that for lunch dinner too. this is supposed to be for multiple dates, but I am just asking you to provide for monday only. 
+json file format {date(within this date - breakfast (fooditems(food name(attributes), food name(attributes))), lunch, dinner)} do that for lunch dinner too. I want you to provide me with a breakfast, lunch, and dinner and
 
-only provide me with the json format, NO OTHER WORDS"`;
+only provide me with the json format, NO OTHER WORDS."`;
+
+
+const mealPlanJSON = [];
 
 async function findFoodsByDay(day) {
     // Use the find method to retrieve documents from the Food collection with the specified day
@@ -75,330 +58,27 @@ async function findFoodsByDay(day) {
     return foodItems;
 }
 
-console.log("hello")
-//console.log("check1" + calculatedFoodList)
-//console.log(findFoodsByDay('Monday'))
-//console.log("check2" + calculatedFoodList)
-//const foodList = findFoodsByDay('Monday')
-//console.log(foodList)
-//console.log("IMMMMM HERRREEEEEEEEEEEEEEEEEEEEEEEEEE")
-// findFoodsByDay();
-const myString = JSON.stringify(
-    [
-        {
-          name: 'Blueberry Pancakes',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Blueberry Compote',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Scrambled Eggs with Cream and Butter',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Scrambled Egg Whites',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Chorizo & Potato Frittata',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Green Pepper & Onion Tofu Scramble',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Turkey Sausage Patty',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Tater Tots',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Blueberry Pancakes',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Blueberry Compote',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Blueberry Pancakes',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Blueberry Compote',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Scrambled Eggs with Cream and Butter',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Scrambled Egg Whites',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Chorizo & Potato Frittata',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Green Pepper & Onion Tofu Scramble',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Turkey Sausage Patty',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Tater Tots',
-          type: 'Breakfast',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Cajun Shrimp, Pork Sausage, Country Cheese Grits',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Black Eyed Peas, Rice, Pork Broth',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Collard Greens',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Cornbread',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'piri piri chicken thigh',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'piri-naise dipping sauce',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'escalivada',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Basmati Rice Pilaf',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Cajun Turkey Burger',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Deluxe Hamburger',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Garden Burger with Truffle Mayo, Mushrooms, Onions and Swiss Cheese',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Fried Chicken Tenders',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Sweet Potato Fries',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Grilled Vegetables',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Garden Burger, Rye Bread, Mushrooms, Onions, Cheese, Steak Sauce',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Chicken Tender',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Burger (1/3 lb) White Bun with Lettuce and Tomato',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'French Fries',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Grilled Vegetables',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Fried Mushrooms',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Grilled Vegetables',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'French Fries',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Chickpea Falafel',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Basmati Rice Pilaf',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Tahini Lemon Dressing',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Tomato Cucumber Onion Salad',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: '6" Flour Tortilla',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Sauteed Napa, Celery, Red Onion',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Sweet and Sour Vegan Meatballs',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Scallion Jasmine Rice',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        },
-        {
-          name: 'Almond Green Beans',
-          type: 'Lunch/Dinner',
-          calories: 10,
-          day: 'Monday'
-        }
-      ]
-)
-// console.log(myString)
-console.log("BLELHERLKEJRLKJJSFLKJSLKJFLSKDJFLKSJDFKJSDJFLSKDJFLK")
-// const finalPrompt = jsonString.concat(textPrompt)
+days_of_week.forEach(async dayItem => {
+    try {
+        const foodItems = await findFoodsByDay(dayItem);
+        const foodList = JSON.stringify(foodItems);
+        const finalPrompt = foodList.concat(textPrompt);
+        await chatGPTReponse(finalPrompt + `Please make this response for ${dayItem}`);
+    } catch (error) {
+        // Handle any errors that occur during the process
+        console.error('Error fetching and storing food items:', error);
+    }
+});
 
-async function chatGPTReponse(){
+async function chatGPTReponse(prompt){
     const response = await openai.chat.completions.create({
-
         model: 'gpt-3.5-turbo',
-    
-        messages: [{"role":"user", "content":myString.concat(textPrompt)}],
-    
-      })
-    
-      console.log(response.choices[0].message.content)
+        messages: [{"role":"user", "content":prompt}],
+    });
+    mealPlanJSON.push(response.choices[0].message.content);
 }
 
 console.log("************************************")
-chatGPTReponse();
 /*CODE ABOVE*/
 
 const ServerV = server.listen(8000, () => {
