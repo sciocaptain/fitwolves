@@ -1,8 +1,20 @@
 from bs4 import BeautifulSoup
+from datetime import datetime
+
+# Import MongoDB related modules here
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['sbuh']
+collection = db['food']
 
 def scrape_menu_files(file_paths):
     # Define the days of the week
     days_of_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+    # Initialize an empty list to store food items
+    food_items = []
 
     # Iterate over each file path
     for file_path in file_paths:
@@ -27,10 +39,18 @@ def scrape_menu_files(file_paths):
             food_names = menu_station.find_all(class_='food-name')
             food_calories = menu_station.find_all(class_='food-calories')
 
-            # Iterate over each food name and calories, and print them along with the day of the week and meal type
+            # Iterate over each food name and calories, and create a food object
             for name, calorie in zip(food_names, food_calories):
-                print("Day of the Week:", day)
-                print("Food Name:", name.get_text(strip=True))
-                print("Calories:", calorie.get_text(strip=True))
-                print("Meal Type:", meal_type)
-                print()
+                # Create a food item dictionary
+                food_item = {
+                    'name': name.get_text(strip=True),
+                    'day': day,  # You may want to adjust this based on the actual date
+                    'type': meal_type,
+                    'calories': 10,
+                }
+
+                # Append the food item to the list
+                food_items.append(food_item)
+
+    return food_items
+

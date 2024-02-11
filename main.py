@@ -7,10 +7,10 @@ import csv
 from zeast.eastscraper import scrape_menu_files
 
 load_dotenv() 
-mongo_uri = os.getenv("MONGO_URI")
+mongo_uri = "mongodb+srv://sbuhacks1:6pIAHWNPppuLCLO4@sbuh.gogbc1t.mongodb.net/"
 
-db_name = "sbuhacks2024"
-db_collection_name = "food"
+db_name = "sbuh"
+db_collection_name = "foodie"
 
 # Connect to the MongoDB Atlas cluster
 client = MongoClient(mongo_uri)
@@ -39,6 +39,8 @@ if __name__ == '__main__':
         'zeast/easthtmlcontent/grilllunch.html',
         'zeast/easthtmlcontent/rootedlunch.html',
     ]
+    food_items = scrape_menu_files(file_paths)
+    collection.insert_many(food_items)
 
-    # Call the function to save data to MongoDB
-    save_to_mongodb(file_paths)
+
+

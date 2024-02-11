@@ -51,6 +51,8 @@ async function chatGPTReponse(){
     
       console.log(response.choices[0].message.content)
 }
+const hello = Food.find({ name: 'Punit'})
+console.log(hello);
 
 chatGPTReponse();
 
