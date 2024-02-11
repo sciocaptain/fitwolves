@@ -1,15 +1,16 @@
-var mongoose = require("mongoose")
-var express = require("express")
-var cors = require('cors')
-var calculatedFoodList = false;
-const dotenv = require('dotenv').config()
+const mongoose = require("mongoose")
+const express = require("express")
+const cors = require('cors')
 const connectDB = require('./config/db')
 const axios = require('axios');
+const dotenv = require('dotenv').config()
 const OpenAI= require("openai")
 
 connectDB()
 
 var server = express()
+server.use(cors());
+
 var MongoDB = process.env.MONGO_URI
 var Food = require("./models/food.js")
 
@@ -39,7 +40,6 @@ json file format {date(within this date - breakfast (fooditems(food name(attribu
 
 only provide me with the json format, NO OTHER WORDS."`;
 
-
 const mealPlanJSON = [];
 
 async function findFoodsByDay(day) {
@@ -54,21 +54,42 @@ async function findFoodsByDay(day) {
         day: food.day, // Include the day information in each food item
     }));
 
-    // console.log(foodItems);
     return foodItems;
 }
 
-days_of_week.forEach(async dayItem => {
+// Create an array to hold all promises for fetching food items for each day
+const promises = days_of_week.map(async dayItem => {
     try {
         const foodItems = await findFoodsByDay(dayItem);
         const foodList = JSON.stringify(foodItems);
         const finalPrompt = foodList.concat(textPrompt);
-        await chatGPTReponse(finalPrompt + `Please make this response for ${dayItem}`);
+        const response = await chatGPTReponse(finalPrompt + `Please make this response for ${dayItem}`);
+        return response.choices[0].message.content;
     } catch (error) {
         // Handle any errors that occur during the process
         console.error('Error fetching and storing food items:', error);
+        return null; // Or any other default value
     }
 });
+
+// Wait for all promises to resolve
+Promise.all(promises)
+    .then(results => {
+        console.log("All promises resolved");
+        // Filter out any null values (if needed)
+        const filteredResults = results.filter(result => result !== null);
+        // console.log(filteredResults);
+        // Send the mealPlanJSON array to the client using Axios
+        server.get('/getJSON', (req, res) => {
+            console.log("HEY")
+            // Send the meal plan JSON as the response
+            res.json(filteredResults);
+        });
+    })
+    .catch(error => {
+        // Handle errors that occur during Promise.all
+        console.error('Error fetching and storing food items:', error);
+    });
 
 async function chatGPTReponse(prompt){
     const response = await openai.chat.completions.create({
@@ -76,10 +97,31 @@ async function chatGPTReponse(prompt){
         messages: [{"role":"user", "content":prompt}],
     });
     mealPlanJSON.push(response.choices[0].message.content);
+    return response;
 }
 
-console.log("************************************")
-/*CODE ABOVE*/
+
+// server.get('/getJSON', (req, res) => {
+//     // Assuming mealPlanJSON is the JSON data you want to send to the client
+//     const mealPlanJSON = {
+//         breakfast: [
+//             { name: 'Scrambled Eggs', calories: 300 },
+//             { name: 'Toast', calories: 150 }
+//         ],
+//         lunch: [
+//             { name: 'Grilled Chicken Salad', calories: 400 },
+//             { name: 'Brown Rice', calories: 200 }
+//         ],
+//         dinner: [
+//             { name: 'Salmon', calories: 350 },
+//             { name: 'Steamed Vegetables', calories: 150 }
+//         ]
+//     };
+
+//     // Send the meal plan JSON as the response
+//     res.json(mealPlanJSON);
+// });
+
 
 const ServerV = server.listen(8000, () => {
     console.log("Server is running on port 8000")
