@@ -5,7 +5,7 @@ const Window2 = () => {
     const [gender, setGender] = useState('');
 
     return (
-        <div>
+        <div id = "survey-container">
             <div className="tc1">
                 Good to meet you, Suyash
             </div>
@@ -40,7 +40,16 @@ const Window2 = () => {
                         />Other</label>
                 </div>
             </div>
-            <Link to="/window3" className="btn-link">Go to Window 3</Link> {/* Button to link to Window3 */}
+            <div id = "Carousel">
+                <Link to = "/window2"><img id = "left-arrow-carousel"></img></Link>
+                <div id="circle-container">
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                </div>
+                <Link to = "/window4"><img id = "right-arrow-carousel"></img></Link>
+            </div>
         </div>
     );
 };

@@ -681,7 +681,7 @@ body{
   
   position: absolute;
   transform: translate(-50%,-50%);
-  left: 31.7%;
+  left: 22%;
   width: 20%;
   transition: border-bottom 0.3s ease-in-out, font-size 0.3s ease-in-out, width 0.3s ease-in-out;
 }
@@ -826,4 +826,47 @@ body{
   width: 80%;
   margin-left: 10%;
   text-align: left;
+}
+
+#Carousel{
+  position: absolute;
+  bottom: 5%;
+  width: 25%;
+  height: 5%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#left-arrow-carousel{
+  content: url("../images/left_arrow.svg");
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  left: 0%;
+  transform: translate(-50%,-50%);
+}
+
+#right-arrow-carousel{
+  content: url("../images/right_arrow.svg");
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  left: 100%;
+  transform: translate(-50%,-50%);
+}
+
+#circle-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%; /* Adjust as needed */
+  margin-left: 20%;
+  height: 100%;
+}
+
+.circle1{
+  width: 0.4vw; /* Adjust as needed */
+  height: 0.4vw; /* Adjust as needed */
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 1vw;
 }

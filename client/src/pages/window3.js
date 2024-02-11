@@ -40,15 +40,24 @@ const Window3 = () => {
                     How tall are you?
                 </div>
 
-                <input className="user_height" type="text" placeholder="    ft    in" value={height} onChange={(e) => setHeight(e.target.value)} style={{ top: '55%' }} />
+                <input className="user_height" type="text" placeholder="ft-in" value={height} onChange={(e) => setHeight(e.target.value)} style={{ top: '55%' }} />
                 <div class="hw-container-3">
                     What's your weight?
                 </div>
-                <input className="user_weight" type="text" placeholder="            lb" value={weight} onChange={(e) => setWeight(e.target.value)} style={{ top: '55%' }} />
+                <input className="user_weight" type="text" placeholder="lbs" value={weight} onChange={(e) => setWeight(e.target.value)} style={{ top: '55%' }} />
 
                 <button onClick={handleSubmit} id="clickey">Submit Survey</button>
             </div>
-            <Link to="/window2" className="btn-link">Go to Window 2</Link>
+            <div id = "Carousel">
+                <Link to = "/window2"><img id = "left-arrow-carousel"></img></Link>
+                <div id="circle-container">
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                </div>
+                <Link to = "/window4"><img id = "right-arrow-carousel"></img></Link>
+            </div>
         </div>
     );
 };

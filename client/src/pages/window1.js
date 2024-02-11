@@ -18,7 +18,16 @@ const Window1 = () => {
                 </div>
                 <input className="user_DOB" type="text" placeholder="I was born on" style={{ top: '55%' }}  />
             </div>
-            <Link to="/window2" className="btn-link">Go to Window 2</Link> {/* Button to link to Window2 */}
+            <div id = "Carousel">
+                <Link to = "/login"><img id = "left-arrow-carousel"></img></Link>
+                <div id="circle-container">
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                    <div class="circle1"></div>
+                </div>
+                <Link to = "/window2"><img id = "right-arrow-carousel"></img></Link>
+            </div>
         </div>
     );
 };

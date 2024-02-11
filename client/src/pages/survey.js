@@ -63,11 +63,11 @@ const Survey = () => {
                 <div class="hw-container-2">
                    How tall are you?
                 </div>
-                <input className = "user_height" type="text" placeholder="    ft    in" style={{ top: '55%', left: "22%"}}/>
+                <input className = "user_height" type="text" placeholder="ft-in" style={{ top: '55%', left: "22%"}}/>
                 <div class="hw-container-3">
                     What's your weight?
                 </div>
-                <input className = "user_weight" type="text" placeholder="            lb" style={{ top: '55%' }}  />
+                <input className = "user_weight" type="text" placeholder="lb" style={{ top: '55%' }}  />
             </div>
             <div id = "survey-window-5" style = {{visibility: "visible"}}>
                 <div id = "title-win-4">Everyone's Beautiful.</div>
