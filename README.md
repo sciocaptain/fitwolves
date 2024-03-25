@@ -69,6 +69,8 @@ Gained valuable insights into various technologies and methodologies including w
 
 ## Contributing
 Contributions are welcome! Please follow the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
-
-## License
-*(Include license information here)*
+This program was written by
+- Moinak Das
+- Jake Segal
+- Suyash Sharma
+- Saurav Sharma
