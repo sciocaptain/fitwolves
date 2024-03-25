@@ -2,6 +2,12 @@
 
 NutriWolf is a web-based diet planner designed exclusively for Stony Brook University students. It provides personalized guidance tailored to individual dietary restrictions and fitness goals, empowering students to make informed choices that align with their health and fitness objectives.
 
+![alt text](https://github.com/moinakdas/FitWolves/blob/main/FitWolvesSample1.png?raw=true)
+![alt text](https://github.com/moinakdas/FitWolves/blob/main/FitWolvesSample2.png?raw=true)
+![alt text](https://github.com/moinakdas/FitWolves/blob/main/FitWolvesSample3.png?raw=true)
+![alt text](https://github.com/moinakdas/FitWolves/blob/main/FitWolvesSample4.png?raw=true)
+
+
 ## Table of Contents
 - [Inspiration](#inspiration)
 - [Features](#features)
